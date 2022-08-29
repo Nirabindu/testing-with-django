@@ -1,6 +1,6 @@
 1.To specify a particular test folder to test=> pytest <name of the project folder>
 
-2.To print out anythings from a test function => pytest -rp in the time of test fail
+2.To print out anythings from a test function => pytest -rP in the time of test fail or pytest -s
 
 3. To run a particular test function inside a file and select one function from my test function => 
 pytest tests/test_exm.py::test_example
@@ -21,3 +21,44 @@ markers =
 def test_():
     ....
 pytest -m "slow"=> only those test is run that have slow markers type of grouping the test
+
+
+
+A pattern to writing test:
+1.Arrange => prepare the data like fixture etc for Act or action creating database data from database to create fixture
+2.Act => function / module doing action on those prepare data
+3.Assert = > to obtain test result
+
+
+Fixture => are used to feed data to the tests such as database connections, URLS to test and input data that should run first before/after run any test 
+
+default run once per test -> function
+
+Run ones per class of tests
+
+module => run ones per module
+
+session => runs ones per session 
+
+basically fixture is running once per test
+
+for testing test database is created and the database for one test does not use in the next test it rollback to the initial test 
+
+
+only default scope fixture run  for every individual test function  
+
+typically we are write the fixture in individual file and call them from conftest.py that is the python file that run first before any test run
+
+Factory BOy:=>>
+1.it is a fixture replacement tool
+2.Factories are define in a nice and ckeane and readable manner
+3.Easy to use factories for complex objects
+4.Class Based Approach:
+    1.SubFactories
+    2.Foreign Key , reverse Foreign key ,many to many field
+
+we have to create the class and have to connect to existing model
+
+faker help us to generate fake data 
+
+if the factory class UserData to call or to access have to use user_data
