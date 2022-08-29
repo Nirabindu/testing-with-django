@@ -1,0 +1,23 @@
+1.To specify a particular test folder to test=> pytest <name of the project folder>
+
+2.To print out anythings from a test function => pytest -rp in the time of test fail
+
+3. To run a particular test function inside a file and select one function from my test function => 
+pytest tests/test_exm.py::test_example
+
+4. pytest mark is to adding meta data to test 
+
+those are available markers
+@pytest.mark.skip = to skip a test 
+@pytest.mark.xfail => use if we know that this test is going to fail
+
+custom markers
+markers =
+    slow: slow running test 
+
+    name and normal str to tell what this marker for
+
+@pytest.mark.slow
+def test_():
+    ....
+pytest -m "slow"=> only those test is run that have slow markers type of grouping the test
