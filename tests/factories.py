@@ -36,11 +36,12 @@ class ProductFactory(factory.django.DjangoModelFactory):
         model = models.Product
         
 
-    #     name = 
+    # these data should be in the data base in the time of test call or override those static value while we pass these data from parameterize
     title = 'round-nack'
     category = factory.SubFactory(CategoryFactory)
     description = fake.text()
     slug = fake.slug()
     regular_price = "9.99"
+
     
     

@@ -2,17 +2,17 @@
 import pytest
 from django.contrib.auth.models import User
 
-# @pytest.mark.django_db
-# def test_user_create():
-#     User.objects.create_user('test','test@test.com','test')
-#     count = User.objects.all().count()
-#     assert User.objects.count() == 1
+@pytest.mark.django_db
+def test_user_create():
+    User.objects.create_user('test','test@test.com','test')
+    count = User.objects.all().count()
+    assert User.objects.count() == 1
 
 
-# @pytest.mark.django_db
-# def test_user_create():
-#     count = User.objects.all().count()
-#     assert count == 0 
+@pytest.mark.django_db
+def test_user_create():
+    count = User.objects.all().count()
+    assert count == 0 
 
 
 # using fixture we bring the database to the function
@@ -25,6 +25,7 @@ def user_1(db):
 
 # @pytest.mark.django_db
 # db is getting from the above fixture
+# not need to define here 
  
 def test_set_check_password(user_1):
     # print(user_1.username)

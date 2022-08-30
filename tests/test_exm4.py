@@ -4,7 +4,7 @@ from tests.factories import UserFactory,ProductFactory,CategoryFactory
 def test_new_user(db,user_factory):
     
     # return an user instance that not saved
-    # user = user_factory.build()
+    user = user_factory.build()
     
     # Returns a saved User instance to test database.
     user = user_factory.create()
